@@ -1,0 +1,31 @@
+
+.text:0x00400144		; =============== F U N C T I O N ====================================
+.text:0x00400144
+.text:0x00400144		.text:
+.text:0x00400144	55	            push   rbp
+.text:0x00400145	4889e5	        mov    rbp,rsp
+.text:0x00400148	897dec      	mov    DWORD PTR [rbp-0x14],edi
+.text:0x0040014b	488975e0    	mov    QWORD PTR [rbp-0x20],rsi
+.text:0x0040014f	c745f801000000	mov    DWORD PTR [rbp-0x8],0x1
+.text:0x00400156	c745fc02000000	mov    DWORD PTR [rbp-0x4],0x2
+.text:0x0040015d	8b45fc	        mov    eax,DWORD PTR [rbp-0x4]
+.text:0x00400160	8b55f8	        mov    edx,DWORD PTR [rbp-0x8]
+.text:0x00400163	01c2        	add    edx,eax
+.text:0x00400165	89d0        	mov    eax,edx
+.text:0x00400167	01c0        	add    eax,eax
+.text:0x00400169	01d0        	add    eax,edx
+.text:0x0040016b	c9	            leave
+.text:0x0040016c	c3	            ret
+
+This x64 Assembly code corresponds to the following program in C:
+
+// Start
+
+int main(int argc, char *argv[]) {
+    int i = 1;
+    int j = 2;
+
+    return (i + j) * 3;
+}
+
+// End
