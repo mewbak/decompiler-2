@@ -210,7 +210,7 @@ void load_section_headers(char *buffer, elf_ehdr *ehdr) {
             printf("%4d = \"%s\"",  eshdr[i].sh_name, (char *) _name);
 
             // When _name == ".text" print out the addres at which it resides.
-            if(!strcmp(_name, ".text")) {
+            if(!strcmp(_name, ".text") || !strcmp(_name, ".init") || !strcmp(_name, ".plt")) {
                 printf(" [Entry point: 0x%x", eshdr[i].sh_addr);
                 //printf(" | Entry Size: %i", eshdr[i].sh_entsize);
                 printf(" | Size: %i]", eshdr[i].sh_size);
