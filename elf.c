@@ -235,6 +235,13 @@ void load_section_headers(char *buffer, elf_ehdr *ehdr) {
                     hextext[j + 1] = (temp[1] >= 0 && temp[1] <= 126) ? temp[1] : '0';
 
                     printf("%c%c ", hextext[j], hextext[j + 1]);
+
+                    if(hextext[j] == '5' && hextext[j + 1 == '5']) {
+                        printf(" ->  push %rbp\n");
+                    }
+                    else if(hextext[j] == '4' && hextext[j + 1 == '8']) {
+                        printf(" ->  mov\n");
+                    }
                 }
 
                 char *hex = bin2hex((char *)text);
